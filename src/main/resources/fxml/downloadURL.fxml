@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="513.0" prefWidth="686.0" style="-fx-background-image: url(&quot;/images/bright_squares.png&quot;);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.controllers.DownLoadURLController">
+   <children>
+      <ProgressBar fx:id="progressBar" layoutX="7.0" layoutY="116.0" prefHeight="20.0" prefWidth="670.0" stylesheets="@../../../../../Download%20Manager/src/application/application.css" />
+      <Text fill="#3c3e8a" layoutX="31.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Downloading at " wrappingWidth="125.0771484375">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="speedText" layoutX="156.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="189.2978515625">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="157.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fill="#e4860c" layoutX="390.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time Remaining :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="timeLeft" layoutX="515.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="108.2978515625">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Button fx:id="stop" blendMode="DARKEN" layoutX="196.0" layoutY="192.0" mnemonicParsing="false" onAction="#stopDownload" prefHeight="15.0" prefWidth="100.0" style="-fx-background-color: black; -fx-border-radius: 10;" stylesheets="@../../../../../Download%20Manager/src/application/application.css" text="Stop" textFill="#0aeeee" textOverrun="LEADING_ELLIPSIS">
+         <font>
+            <Font name="SansSerif Bold" size="15.0" />
+         </font>
+         <opaqueInsets>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="50.0" />
+         </opaqueInsets>
+      </Button>
+      <Button fx:id="cancel" blendMode="DARKEN" layoutX="390.0" layoutY="192.0" mnemonicParsing="false" onAction="#cancelDownload" prefHeight="27.0" prefWidth="100.0" style="-fx-background-color: black; -fx-border-radius: 10;" stylesheets="@../../../../../Download%20Manager/src/application/application.css" text="Cancel" textFill="#0aeeee" textOverrun="LEADING_ELLIPSIS">
+         <font>
+            <Font name="SansSerif Bold" size="15.0" />
+         </font>
+         <opaqueInsets>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="50.0" />
+         </opaqueInsets>
+      </Button>
+      <TitledPane fx:id="advancedPane" expanded="false" layoutX="9.0" layoutY="465.0" maxHeight="-Infinity" prefHeight="185.0" prefWidth="661.0" text="Thread Status" textFill="#220ce8">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <content>
+            <ScrollPane prefViewportHeight="156.0" prefViewportWidth="659.0">
+               <content>
+                  <FlowPane fx:id="flowPane" prefHeight="158.0" prefWidth="645.0" />
+               </content>
+            </ScrollPane>
+         </content>
+      </TitledPane>
+      <Text layoutX="38.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="File Size : " wrappingWidth="74.0771484375">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.7596153846153846">
+               <stops>
+                  <Stop color="#e11c1c" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <Text fx:id="fileSize" layoutX="126.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="235.2978515625">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="395.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time Taken  :" wrappingWidth="108.2978515625">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="timeTaken" layoutX="509.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="108.2978515625">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="filePathText" editable="false" layoutX="62.0" layoutY="14.0" prefHeight="28.0" prefWidth="610.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </TextField>
+      <Text layoutX="11.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Path :" wrappingWidth="52.2978515625">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <AreaChart fx:id="downloadSpeedChart" layoutX="5.0" layoutY="236.0" legendSide="TOP" prefHeight="226.0" prefWidth="670.0">
+        <xAxis>
+          <CategoryAxis label="Time (Seconds)" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis label="Speed (Mbps)" side="LEFT" />
+        </yAxis>
+      </AreaChart>
+   </children>
+</AnchorPane>

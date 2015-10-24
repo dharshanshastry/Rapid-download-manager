@@ -1,0 +1,47 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+
+#background {
+    -fx-background-color: -mid-gray;
+}
+
+.progress-bar { -fx-box-border: goldenrod; }
+
+
+.vContainer{
+	-fx-pref-width: 400px;
+	-fx-pref-height: 100px ;
+}
+.default-color0.chart-area-symbol { -fx-background-color: #e9967a, #ffa07a; }
+.default-color1.chart-area-symbol { -fx-background-color: #f0e68c, #fffacd; }
+.default-color2.chart-area-symbol { -fx-background-color: #dda0dd, #d8bfd855; }
+ 
+.default-color0.chart-series-area-line { -fx-stroke: #e9967a; }
+.default-color1.chart-series-area-line { -fx-stroke: #f0e68c; }
+.default-color2.chart-series-area-line { -fx-stroke: #dda0dd; }
+ 
+.default-color0.chart-series-area-fill { -fx-fill: #ffa07a55; }
+.default-color1.chart-series-area-fill { -fx-fill: #fffacd55; }
+.default-color2.chart-series-area-fill { -fx-fill: #d8bfd855; }
+
+.threadText{
+	-fx-font-weight: BOLD;
+	-fx-font-size: 14;
+	-fx-fill: fuchsia;
+}
+
+.add_button{
+	-fx-text-fill: blue;
+}
+
+.progress-bar > .bar {
+    -fx-background-color: linear-gradient(
+        from 0px .75em to .75em 0px,
+        repeat,
+        -fx-accent 0%,
+        -fx-accent 49%,
+        derive(-fx-accent, 30%) 50%,
+        derive(-fx-accent, 30%) 99% 
+    );
+}
+

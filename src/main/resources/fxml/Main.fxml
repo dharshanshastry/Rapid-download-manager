@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1400.0" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.controllers.MainScreenController">
+   <children>
+      <SplitPane dividerPositions="0.20993589743589744" layoutY="89.0" prefHeight="659.0" prefWidth="1400.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="657.0" prefWidth="276.0">
+               <children>
+                  <TreeView fx:id="categoriesTree" layoutX="11.0" layoutY="10.0" prefHeight="657.0" prefWidth="247.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="657.0" prefWidth="1061.0">
+               <children>
+                  <ScrollPane fx:id="scrollPane" hbarPolicy="ALWAYS" prefHeight="657.0" prefViewportHeight="657.0" prefViewportWidth="915.0" prefWidth="993.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <TableView fx:id="downloadTable" onContextMenuRequested="#openContextMenu" prefHeight="657.0" prefWidth="1417.0" style="-fx-background-image: url( &quot;/images/wet_snow.png&quot;);" stylesheets="@../styles/styles.css" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                              <TableColumn fx:id="downloadnumberColumn" prefWidth="53.0" text="#" />
+                              <TableColumn fx:id="fileNameColumn" minWidth="0.0" prefWidth="149.0" text="File Name" />
+                              <TableColumn fx:id="sizeColumn" prefWidth="88.0" text="Size" />
+                              <TableColumn fx:id="filePathColumn" prefWidth="200.0" text="File Path" />
+                              <TableColumn fx:id="categoryColumn" prefWidth="127.0" text="Category" />
+                              <TableColumn fx:id="statusColumn" prefWidth="120.0" text="Status" />
+                              <TableColumn fx:id="urlColumn" prefWidth="250.0" text="URL" />
+                              <TableColumn fx:id="addDateColumn" prefWidth="135.0" text="Add Date" />
+                              <TableColumn fx:id="completedDateColumn" prefWidth="135.0" text="Completed Date" />
+                              <TableColumn fx:id="timeTakenColumn" prefWidth="140.0" text="Time taken" />
+                          </columns>
+                        </TableView>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <AnchorPane layoutY="-1.0" prefHeight="90.0" prefWidth="1400.0" style="-fx-background-image: url(&quot;/images/crossword.png&quot;);">
+         <children>
+            <Button fx:id="deleteURL1" blendMode="DARKEN" disable="true" layoutX="86.0" layoutY="21.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" stylesheets="@../styles/application.css" textFill="#0aeeee" textOverrun="LEADING_ELLIPSIS">
+               <font>
+                  <Font name="SansSerif Bold" size="15.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="50.0" />
+               </opaqueInsets>
+               <styleClass>
+                  <String fx:value="buttonMenuBarDelete" />
+                  <String fx:value="buttonMenuBar" />
+               </styleClass>
+            </Button>
+            <Button fx:id="newURL" blendMode="DARKEN" layoutX="14.0" layoutY="21.0" mnemonicParsing="false" onAction="#addNewURL" prefHeight="44.0" prefWidth="44.0" stylesheets="@../styles/application.css" textFill="#f2f2f2" textOverrun="LEADING_ELLIPSIS">
+               <font>
+                  <Font name="SansSerif Bold" size="15.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="50.0" />
+               </opaqueInsets>
+               <styleClass>
+                  <String fx:value="buttonMenuBarAdd" />
+                  <String fx:value="buttonMenuBar" />
+               </styleClass>
+            </Button>
+            <TextField fx:id="searchBox" layoutX="894.0" layoutY="15.0" prefHeight="61.0" prefWidth="506.0" promptText="Type in to search downloads" />
+            <Button fx:id="deleteURL11" blendMode="DARKEN" layoutX="310.0" layoutY="21.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="51.0" stylesheets="@../styles/application.css" textFill="#0aeeee" textOverrun="LEADING_ELLIPSIS">
+               <font>
+                  <Font name="SansSerif Bold" size="15.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="50.0" />
+               </opaqueInsets>
+               <styleClass>
+                  <String fx:value="buttonMenuBarSettings" />
+                  <String fx:value="buttonMenuBar" />
+               </styleClass>
+            </Button>
+            <Button fx:id="deleteURL111" blendMode="DARKEN" layoutX="229.0" layoutY="21.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="51.0" stylesheets="@../styles/application.css" textFill="#0aeeee" textOverrun="LEADING_ELLIPSIS">
+               <font>
+                  <Font name="SansSerif Bold" size="15.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="50.0" />
+               </opaqueInsets>
+               <styleClass>
+                  <String fx:value="buttonMenuBarSchedular" />
+                  <String fx:value="buttonMenuBar" />
+               </styleClass>
+            </Button>
+            <Button fx:id="deleteURL12" blendMode="DARKEN" layoutX="152.0" layoutY="21.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="44.0" stylesheets="@../styles/application.css" textFill="#0aeeee" textOverrun="LEADING_ELLIPSIS">
+               <font>
+                  <Font name="SansSerif Bold" size="15.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="50.0" />
+               </opaqueInsets>
+               <styleClass>
+                  <String fx:value="buttonMenuBarDeleteAll" />
+                  <String fx:value="buttonMenuBar" />
+               </styleClass>
+            </Button>
+            <Button fx:id="deleteURL112" blendMode="DARKEN" layoutX="389.0" layoutY="21.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="51.0" stylesheets="@../styles/application.css" textFill="#0aeeee" textOverrun="LEADING_ELLIPSIS">
+               <font>
+                  <Font name="SansSerif Bold" size="15.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="50.0" />
+               </opaqueInsets>
+               <styleClass>
+                  <String fx:value="buttonMenuBarHelp" />
+                  <String fx:value="buttonMenuBar" />
+               </styleClass>
+            </Button>
+            <Button fx:id="deleteURL1121" blendMode="DARKEN" layoutX="465.0" layoutY="21.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="51.0" stylesheets="@../styles/application.css" textFill="#0aeeee" textOverrun="LEADING_ELLIPSIS">
+               <font>
+                  <Font name="SansSerif Bold" size="15.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="50.0" />
+               </opaqueInsets>
+               <styleClass>
+                  <String fx:value="buttonMenuBarAbout" />
+                  <String fx:value="buttonMenuBar" />
+               </styleClass>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

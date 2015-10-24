@@ -1,0 +1,126 @@
+/* Application wide styles */
+
+.label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+
+.button1 {
+    -fx-text-fill: orange;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.buttonMenuBar {
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+    -fx-background-color: white;  
+}
+
+.buttonMenuBarAdd {
+	-fx-background-image: url("../images/new_icon.png");
+}
+
+.buttonMenuBarDelete {
+	-fx-background-image: url("../images/delete.png");
+}
+
+.buttonMenuBarDeleteAll {
+	-fx-background-image: url("../images/delete_all.png");
+}
+
+.buttonMenuBarSettings {
+	-fx-background-image: url("../images/settings.png");
+}
+
+.buttonMenuBarSchedular {
+	-fx-background-image: url("../images/scheduler.png");
+}
+
+.buttonMenuBarHelp {
+	-fx-background-image: url("../images/help.png");
+}
+
+.buttonMenuBarAbout {
+	-fx-background-image: url("../images/about.png");
+}
+
+/* Component specific styles */
+
+
+.main-panel {
+    -fx-background-image: url("/images/background.jpg");
+}
+
+.table-row-cell:hover{
+    -fx-background-color: blanchedalmond;
+}
+ 
+.table-row-cell:selected{
+    -fx-background-color: #FF6600;
+     -fx-text-fill: black;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    
+}
+
+.hello-message {
+    -fx-text-fill: #AA0000;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+
+.table-view {
+-fx-table-cell-border-color:derive(-fx-base,+10%);
+-fx-table-header-border-color:derive(-fx-base,+20%);
+}
+
+/* The increment and decrement button CSS class of scrollbar */
+.increment-button ,.decrement-button {
+    -fx-background-color:transparent;
+	-fx-background-radius: 2em;
+
+}
+
+/* The main scrollbar **track** CSS class  */
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+	-fx-background-color: transparent;
+	-fx-border-color:derive(gray,80%);
+
+	-fx-background-radius: 2em;
+	-fx-border-radius:2em;
+}
+
+/* The main scrollbar **thumb** CSS class which we drag every time (movable) */
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color:derive(black,90%);
+	-fx-background-insets: 2, 0, 0;
+	-fx-background-radius: 2em;
+}
+
+#searchBox {
+  -fx-background-image:url('../images/find.png');
+  -fx-background-repeat: no-repeat;
+  -fx-background-position: right center;
+  -fx-font-size: 20;
+}
+
+.tree-view {
+    -fx-background-color: black;
+}
+.table-view .column-header {
+	 -fx-background-color:#1C1C1C;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+.table-view .column-header .label {
+    -fx-text-fill: WHITE;
+    -fx-font-weight: bold;
+}
+

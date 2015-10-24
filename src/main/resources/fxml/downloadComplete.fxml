@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="111.0" prefWidth="409.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.controllers.DownloadCompleteController">
+   <children>
+      <Button fx:id="openFile" layoutX="67.0" layoutY="69.0" mnemonicParsing="false" onAction="#openFile" prefHeight="26.0" prefWidth="83.0" stylesheets="@../styles/../styles/application.css" text="Open" />
+      <Button fx:id="openFolder" layoutX="223.0" layoutY="69.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="108.0" stylesheets="@../styles/application.css" text="Open folder" />
+      <Text layoutX="14.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Path :" wrappingWidth="44.2978515625">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="filePathText" editable="false" layoutX="67.0" layoutY="26.0" prefHeight="26.0" prefWidth="327.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>
