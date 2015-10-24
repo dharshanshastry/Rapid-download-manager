@@ -1,6 +1,6 @@
 # Rapid-download-manager
 Rapid download manager lets you download your files from internet and organizes your downloads as Music,Video,
-Software etc for easy access.Very good alternate for very popular IDM and sometimes downloads even faster than IDM.
+Software etc for easy access.Very good alternative for very popular Internet Download manager (IDM). Rapid download manager downloads files faster than IDM.
 
 Features :
 1. Search your downloads
