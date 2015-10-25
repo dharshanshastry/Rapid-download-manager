@@ -124,7 +124,7 @@ public class MainScreenController implements Initializable{
 			stage.setFullScreen(false);
 			stage.show();
 		} catch(Exception e) {
-			e.printStackTrace();
+			// TODO: handle exception
 		}
 	}
 

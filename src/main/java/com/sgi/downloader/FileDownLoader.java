@@ -77,7 +77,7 @@ public class FileDownLoader {
 			downloadTaskVO.setTasks(tasks);
 		}
 		catch(Exception e){
-			e.printStackTrace();
+			// TODO: handle exception
 		}
 		return downloadTaskVO;
 	}

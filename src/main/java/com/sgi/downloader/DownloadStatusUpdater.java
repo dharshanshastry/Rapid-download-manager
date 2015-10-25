@@ -46,7 +46,7 @@ public class DownloadStatusUpdater implements Runnable {
 			downloadUIComponentsVO.getTimeLeftText().setText(timeLeft);
 			downloadUIComponentsVO.getTimeTakenText().setText(timeTaken);
 		}catch(Exception e){
-			e.printStackTrace();
+			// TODO: handle exception
 		}
 	}
 

@@ -65,7 +65,7 @@ public class ChunkFilesConsolidatorTask extends Task {
 			});
 
 		} catch ( Exception e) {
-			e.printStackTrace();
+			// TODO: handle exception
 		}
 
 

@@ -27,7 +27,7 @@ public class DMStarter extends Application {
 			primaryStage.show();
 
 		} catch(Exception e) {
-			e.printStackTrace();
+			// TODO: handle exception
 		}
 
 
