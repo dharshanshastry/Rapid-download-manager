@@ -21,12 +21,12 @@ public class FileUtils {
 			}
 
 		} catch (IOException e) {
-			e.printStackTrace();
+			// TODO: handle exception
 		} finally {
 			try {
 				if (br != null)br.close();
 			} catch (IOException ex) {
-				ex.printStackTrace();
+				// TODO: handle exception
 			}
 		}
 

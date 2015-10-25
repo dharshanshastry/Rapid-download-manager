@@ -30,7 +30,7 @@ public class HSQLDBManager {
 				createDB();
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			// TODO: handle exception
 		}
 
 	}
@@ -51,7 +51,7 @@ public class HSQLDBManager {
 				stmt.executeQuery(statement);
 			}
 		} catch (Exception e) {
-			//Exception handling is pending 
+			// TODO: handle exception 
 		}
 	}
 
@@ -65,7 +65,7 @@ public class HSQLDBManager {
 			dbConn = DriverManager.getConnection(
 					"jdbc:hsqldb:hsql://localhost/xdb", "SA", "");
 		} catch (Exception e) {
-			//Exception handling is pending
+			// TODO: handle exception
 		}
 		return dbConn;
 	}

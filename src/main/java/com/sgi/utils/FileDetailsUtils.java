@@ -42,7 +42,7 @@ public class FileDetailsUtils {
 				downloadVO.setFileExtension(fileName.substring(fileName.lastIndexOf('.'), fileName.length()));
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
+			// TODO: handle exception
 		}
 		return downloadVO;
 

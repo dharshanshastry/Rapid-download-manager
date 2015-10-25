@@ -88,7 +88,7 @@ public class ChunkFilesConsolidatorTask extends Task {
 			stage.setFullScreen(false);
 			stage.show();
 		} catch (Exception e) {
-			e.printStackTrace();
+			// TODO: handle exception
 		}
 
 	}

@@ -47,7 +47,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 			}
 			CategoryVO.cachedCategories = categories;
 		} catch (SQLException e) {
-			e.printStackTrace();
+			// TODO: handle exception
 		}
 		return categories;
 

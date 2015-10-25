@@ -72,7 +72,7 @@ public class DownloadStatusTracker extends Task {
 			}
 		}
 		catch (Exception e) {
-			e.printStackTrace();
+			// TODO: handle exception
 		}
 		return null;
 	}
