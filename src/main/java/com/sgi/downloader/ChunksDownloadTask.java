@@ -153,7 +153,7 @@ public class ChunksDownloadTask extends Task<File> {
 			} 
 			httpConn.disconnect();
 		} catch (IOException e) {
-			e.printStackTrace();
+			// TODO: handle exception
 		}
 		return file;
 	}

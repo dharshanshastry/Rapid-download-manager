@@ -104,7 +104,7 @@ public class DownLoadURLController implements Initializable {
 			try {
 				fileDownloader.restartDownloads();
 			} catch (Exception e) {
-				e.printStackTrace();
+				// TODO: handle exception
 			}
 
 		}
@@ -137,7 +137,7 @@ public class DownLoadURLController implements Initializable {
 			downloadSpeedChart.getData().add(series);
 		}
 		catch(Exception e){
-			e.printStackTrace();
+			// TODO: handle exception
 		}
 
 	}
