@@ -57,7 +57,7 @@ public class DownloadsDAOImpl implements DownloadsDAO {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			// TODO: handle exception
 		}
 		return downloads;
 	}
@@ -94,7 +94,7 @@ public class DownloadsDAOImpl implements DownloadsDAO {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			// TODO: handle exception
 		}
 		return downloads;
 	}
@@ -130,7 +130,7 @@ public class DownloadsDAOImpl implements DownloadsDAO {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			// TODO: handle exception
 		}
 		return downloads;
 	}
@@ -167,7 +167,7 @@ public class DownloadsDAOImpl implements DownloadsDAO {
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			// TODO: handle exception
 		}
 		return downloads;
 	}
@@ -183,9 +183,9 @@ public class DownloadsDAOImpl implements DownloadsDAO {
 			preparedStatement.setInt(1, downloadVO.getStatusVO().getStatusId());
 			preparedStatement.setDate(2, new Date( downloadVO.getCompletedDate().getTime()));
 			preparedStatement.setLong(3, downloadVO.getDownloadId());
-			System.out.println(preparedStatement.execute());
+			preparedStatement.execute();
 		} catch (SQLException e) {
-			e.printStackTrace();
+			// TODO: handle exception
 		}
 	}
 	
@@ -197,9 +197,9 @@ public class DownloadsDAOImpl implements DownloadsDAO {
 
 			preparedStatement.setInt(1, downloadVO.getStatusVO().getStatusId());
 			preparedStatement.setLong(2, downloadVO.getDownloadId());
-			System.out.println(preparedStatement.execute());
+			preparedStatement.execute();
 		} catch (SQLException e) {
-			e.printStackTrace();
+			// TODO: handle exception
 		}
 	}
 
@@ -219,14 +219,14 @@ public class DownloadsDAOImpl implements DownloadsDAO {
 			preparedStatement.setTimestamp(8, null);
 			preparedStatement.setInt(9, downloadVO.getNumberOfThreads());
 			preparedStatement.setLong(10, downloadVO.getRangeStart());
-			System.out.println(preparedStatement.execute());
+			preparedStatement.execute();
 			ResultSet resultSet =  preparedStatement.getGeneratedKeys();
 			if(resultSet.next()){
 				downloadVO.setDownloadId(resultSet.getLong("DOWNLOAD_ID"));
 			}
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			// TODO: handle exception
 		}
 	}
 

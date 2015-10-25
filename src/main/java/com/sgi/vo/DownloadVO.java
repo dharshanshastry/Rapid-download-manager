@@ -44,7 +44,6 @@ public class DownloadVO {
 		if(completedDate == null || createdDate == null){
 			return null;
 		}
-		System.out.println("TIME TAKEN : completedDate.getTime()-createdDate.getTime()"+(completedDate.getTime()-createdDate.getTime()));
 		return DateUtils.formateDate( new Date(completedDate.getTime()-createdDate.getTime()));
 	}
 
@@ -53,7 +52,6 @@ public class DownloadVO {
 	}
 
 	public String getFileName() {
-		System.out.println("fileName="+fileName);
 		if((fileName == null || fileName.isEmpty()) && filePath !=null){
 			return filePath.substring(filePath.lastIndexOf("/") + 1,
 					filePath.length());

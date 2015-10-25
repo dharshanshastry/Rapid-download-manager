@@ -203,7 +203,6 @@ public class MainScreenController implements Initializable{
 				copyFilePath.setOnAction(new EventHandler<ActionEvent>() {  
 					@Override  
 					public void handle(ActionEvent event) {  
-						System.out.println((DownloadVO)row.getItem());  
 						final Clipboard clipboard = Clipboard.getSystemClipboard();
 						final ClipboardContent content = new ClipboardContent();
 						content.putString(((DownloadVO)row.getItem()).getFilePath());
@@ -214,7 +213,6 @@ public class MainScreenController implements Initializable{
 				copyUrl.setOnAction(new EventHandler<ActionEvent>() {  
 					@Override  
 					public void handle(ActionEvent event) {  
-						System.out.println((DownloadVO)row.getItem());  
 						final Clipboard clipboard = Clipboard.getSystemClipboard();
 						final ClipboardContent content = new ClipboardContent();
 						content.putString(((DownloadVO)row.getItem()).getUrl());
@@ -227,12 +225,11 @@ public class MainScreenController implements Initializable{
 				openFile.setOnAction(new EventHandler<ActionEvent>() {  
 					@Override  
 					public void handle(ActionEvent event) {  
-						System.out.println((DownloadVO)row.getItem());  
 						File file = new File(((DownloadVO)row.getItem()).getFilePath());
 						try {
 							Desktop.getDesktop().open(file);
 						} catch (IOException e) {
-							e.printStackTrace();
+							// TODO: handle exception
 						}
 					}  
 				}); 
@@ -242,12 +239,11 @@ public class MainScreenController implements Initializable{
 				openWith.setOnAction(new EventHandler<ActionEvent>() {  
 					@Override  
 					public void handle(ActionEvent event) {  
-						System.out.println((DownloadVO)row.getItem());  
 						File file = new File(((DownloadVO)row.getItem()).getFilePath());
 						try {
 							Desktop.getDesktop().edit(file);
 						} catch (IOException e) {
-							e.printStackTrace();
+							// TODO: handle exception
 						}
 					}  
 				}); 
@@ -268,10 +264,9 @@ public class MainScreenController implements Initializable{
 
 								Process process = probuilder.start();
 								int exitValue = process.waitFor();
-								System.out.println("\n\nExit Value is " + exitValue);
 							}
 						} catch (IOException | InterruptedException e) {
-							e.printStackTrace();
+							// TODO: handle exception
 						}
 
 					}  

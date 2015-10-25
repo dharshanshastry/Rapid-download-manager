@@ -14,9 +14,7 @@ public class DateUtils {
 				return null;
 			}
 			SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss a");
-			System.out.println(formatter.format(date));
 			Date s = formatter.parse(formatter.format(date));
-			System.out.println(s);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}

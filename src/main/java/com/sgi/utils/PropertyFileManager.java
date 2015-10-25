@@ -20,15 +20,13 @@ public class PropertyFileManager {
                   
 				}
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				// TODO: handle exception
 			}
 		}
 		try {
 			properties.load(new FileInputStream(propertyFile));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			// TODO: handle exception
 		}
 	}
 
@@ -37,8 +35,7 @@ public class PropertyFileManager {
 		try {
 			properties.store(new FileOutputStream(propertyFile)	, null);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			// TODO: handle exception
 		}
 	}
 
@@ -47,8 +44,7 @@ public class PropertyFileManager {
 			try {
 				properties.load(new FileInputStream(propertyFile));
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				// TODO: handle exception
 			}
 		}
 		return properties.getProperty(key);

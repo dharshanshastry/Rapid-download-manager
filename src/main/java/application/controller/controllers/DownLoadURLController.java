@@ -78,7 +78,6 @@ public class DownLoadURLController implements Initializable {
 		}
 		else{
 			File file = new File(fileDownloader.getDownloadVO().getFilePath().substring(0, fileDownloader.getDownloadVO().getFilePath().lastIndexOf(File.separator)));
-			System.out.println("file.getAbsolutePath() :"+file.getAbsolutePath());
 			for (File tempFile : file.listFiles(new FileFilter() {
 
 				@Override
@@ -97,7 +96,6 @@ public class DownLoadURLController implements Initializable {
 					}
 
 				}
-				System.out.println(tempFile.getName() + "RANGE:"+tempFile.length());
 			}
 			fileDownloader.getDownloadVO().setStatusVO(StatusVO.STATUSES.DOWNLOADING.getStatus());
 			downloadsDAO.updateDownloadStatus(fileDownloader.getDownloadVO());
@@ -106,7 +104,6 @@ public class DownLoadURLController implements Initializable {
 			try {
 				fileDownloader.restartDownloads();
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 

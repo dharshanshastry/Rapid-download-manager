@@ -46,14 +46,12 @@ public class ChunkFilesConsolidatorTask extends Task {
 					return null;
 				}
 				if(file != null && file.getAbsolutePath() !=null){
-					System.out.println("FIle - >" +file.getAbsolutePath());
 					readAndWrite( fileOutputStream,file);
 					file.delete();
 				}
 			}
 			executor.shutdown();
 			fileOutputStream.close();
-			System.out.println("Final Size : "+ new File(downloadVO.getFilePath()).length());
 			downloadVO.setStatus("COMPLETE");
 			downloadVO.setCompletedDate(new Date());
 			downloadVO.setFileSizeWithUnits(UnitUtility.convertBytesToReadableMBOrGB (downloadVO.getFileLengthInBytes()));

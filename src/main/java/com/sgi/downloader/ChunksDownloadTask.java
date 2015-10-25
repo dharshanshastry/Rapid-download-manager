@@ -47,20 +47,15 @@ public class ChunksDownloadTask extends Task<File> {
 
 	@Override
 	public File call() {
-		System.out.println(Platform.isFxApplicationThread());
 		File file = null;
 		try {
 			URL url = new URL(downloadVO.getUrl());
 			HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
 			int responseCode;
-			//System.out.println("Requesting");
 			httpConn.setRequestProperty("Range",
 					"bytes=" + getRangeStart() + "-"+getRangeEnd());
 			httpConn.connect();
-			//System.out.println("Connected");
 			responseCode = httpConn.getResponseCode();
-			System.out.println("Range"+
-					"bytes=" + getRangeStart() + "-"+getRangeEnd());
 			// always check HTTP response code first
 			if (responseCode == HttpURLConnection.HTTP_OK || responseCode == HttpURLConnection.HTTP_PARTIAL) {
 				String fileName = "";
@@ -81,10 +76,6 @@ public class ChunksDownloadTask extends Task<File> {
 							fileURL.length());
 				}*/
 				fileName = downloadVO.getFileName();
-				/*System.out.println("Thread Name :"+Thread.currentThread().getName()+ " Content-Type = " + contentType);
-				System.out.println("Thread Name :"+Thread.currentThread().getName()+ "Content-Disposition = " + disposition);
-				System.out.println("Thread Name :"+Thread.currentThread().getName()+ "Content-Length = " + contentLength);
-				System.out.println("Thread Name :"+Thread.currentThread().getName()+ "fileName = " + fileName);*/
 
 				// opens input stream from the HTTP connection
 				InputStream inputStream = httpConn.getInputStream();
@@ -92,7 +83,6 @@ public class ChunksDownloadTask extends Task<File> {
 				FileOutputStream outputStream = null;
 				if( filePath == null){
 					if(getTaskNumber() == 0 ){
-						System.out.println("FILE NAME :"+fileName);
 						file = File.createTempFile(downloadVO.getFilePath() + File.separator + fileName, ".tmp_"+getTaskNumber());
 					}
 					else{
@@ -103,7 +93,6 @@ public class ChunksDownloadTask extends Task<File> {
 				else{
 					file = filePath;
 				}
-				System.out.println("FILE NAME CHOSEN IS "+file.getAbsolutePath());
 				outputStream = new FileOutputStream(file);
 
 				int bytesRead = -1,previousAmount=0;
@@ -112,7 +101,6 @@ public class ChunksDownloadTask extends Task<File> {
 				byte[] buffer = new byte[BUFFER_SIZE];
 				while(true){
 					if(isCancelled()){
-						System.out.println("TOATL SIZE for"+file.getAbsolutePath()+" -> "+totalSize);
 						filePath = file;
 						String saveFilePath = getDownloadVO().getFilePath().substring(0, getDownloadVO().getFilePath().lastIndexOf(File.separator)) + File.separator + "."+fileName;
 						filePath.renameTo(new File(saveFilePath+".tmp__"+getTaskNumber()+"__"+(getRangeStart()+totalSize)+"__"+getRangeEnd()+"__"+getRangeStart()));
@@ -158,14 +146,11 @@ public class ChunksDownloadTask extends Task<File> {
 					}
 					else break;
 				}
-				System.out.println("Thread Name :"+Thread.currentThread().getName()+ "Size -> "+ (float)totalSize/1000000+" MB");
 				updateMessage("Thread "+getTaskNumber()+" is complete ");
 				outputStream.close();
 				inputStream.close();
 
-			} else {
-				System.out.println("Thread Name :"+Thread.currentThread().getName()+ "No file to download. Server replied HTTP code: " + responseCode);
-			}
+			} 
 			httpConn.disconnect();
 		} catch (IOException e) {
 			e.printStackTrace();

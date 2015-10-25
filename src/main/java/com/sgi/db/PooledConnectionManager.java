@@ -22,9 +22,8 @@ public class PooledConnectionManager {
 		try {
 			Class.forName("org.hsqldb.jdbcDriver");
 			dataSource = setupDataSource("jdbc:hsqldb:hsql://localhost/xdb");
-			//dataSource = setupDataSource("jdbc:hsqldb:file:path-to-file");
 		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+			// TODO: handle exception
 		}
 	}
 

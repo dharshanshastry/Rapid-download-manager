@@ -11,6 +11,9 @@ import com.sgi.utils.FileUtils;
 
 public class HSQLDBManager {
 
+	private static final String SQL_DOWNLOAD_MANAGER_SQL_FILE_PATH = "/sql/download_manager.sql";
+	
+	
 	final static String dbLocation = "."+File.separator+"DB"+File.separator; // change it to your db location
 	static org.hsqldb.server.Server sonicServer;
 	Connection dbConn = null;
@@ -24,7 +27,6 @@ public class HSQLDBManager {
 			sonicServer.setProperties(props);
 			sonicServer.start();
 			if(!doesDBExist()){
-				System.out.println("Seems User Opening for first time , Creating DB ");
 				createDB();
 			}
 		} catch (Exception e) {
@@ -35,7 +37,6 @@ public class HSQLDBManager {
 
 	private static boolean doesDBExist(){
 		File dbFile = new File("."  +File.separator + "DB"+File.separator+"RapidDB.script");
-		System.out.println("dbFile.exists():"+dbFile.exists());
 		return dbFile.exists();
 
 	}
@@ -44,14 +45,13 @@ public class HSQLDBManager {
 		try {
 			Connection conn = PooledConnectionManager.getDataSource().getConnection();
 			Statement stmt = conn.createStatement();
-			String sqlFile =  FileUtils.readFile(HSQLDBManager.class.getResourceAsStream("/sql/download_manager.sql"), 5000);
+			String sqlFile =  FileUtils.readFile(HSQLDBManager.class.getResourceAsStream(SQL_DOWNLOAD_MANAGER_SQL_FILE_PATH), 5000);
 			String[] statements  = sqlFile.split(";");	
 			for (String statement : statements) {
-				System.out.println(statement);
 				stmt.executeQuery(statement);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			//Exception handling is pending 
 		}
 	}
 
@@ -65,7 +65,7 @@ public class HSQLDBManager {
 			dbConn = DriverManager.getConnection(
 					"jdbc:hsqldb:hsql://localhost/xdb", "SA", "");
 		} catch (Exception e) {
-			e.printStackTrace();
+			//Exception handling is pending
 		}
 		return dbConn;
 	}

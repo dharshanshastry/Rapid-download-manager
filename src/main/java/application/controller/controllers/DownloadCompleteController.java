@@ -13,10 +13,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
-import com.sgi.dao.DownloadsDAO;
-import com.sgi.dao.DownloadsDAOImpl;
-import com.sgi.db.PooledConnectionManager;
-
 public class DownloadCompleteController implements Initializable {
 
 
@@ -42,7 +38,7 @@ public class DownloadCompleteController implements Initializable {
 		try {
 			Desktop.getDesktop().open(file);
 		} catch (IOException e) {
-			e.printStackTrace();
+			// TODO: handle exception
 		}
 		hideWindow(actionEvent);
 	}

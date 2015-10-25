@@ -112,7 +112,6 @@ public class AddNewURLController implements Initializable {
 					downloadVO.setCategoryVO(categoryVO);
 					downloadVO.setStatusVO(StatusVO.STATUSES.DOWNLOADING.getStatus());
 					downloadVO.setFilePath(saveToDir.getText());
-					System.out.println(downloadVO);
 					tableWrapper.addNewRowToTable(downloadVO);
 					DownloadUIComponentsVO downloadUIComponentsVO = buildDownloadUiComponentVO(root,
 							downloadWindowScene, downLoader);
@@ -124,7 +123,7 @@ public class AddNewURLController implements Initializable {
 					loader.<DownLoadURLController>getController().setDownloadTaskVO(downloadTaskVO);
 					loader.<DownLoadURLController>getController().setFileDownloader(downLoader);
 				} catch (Exception e) {
-					e.printStackTrace();
+					// TODO: handle exception
 				}
 
 			}
@@ -225,7 +224,6 @@ public class AddNewURLController implements Initializable {
 									saveToDir.setText(System.getProperty("user.home")+File.separator+downloadVO.getFileName());
 									boolean matchFound =false;
 									for (CategoryVO categoryVO :  categories.getItems()) {
-										System.out.println("Extensions - "+categoryVO.getFileExtensions());
 										if(categoryVO.getFileExtensions().contains(download.getFileExtension())){
 											categories.getSelectionModel().select(categoryVO);
 											matchFound = true;
@@ -234,7 +232,6 @@ public class AddNewURLController implements Initializable {
 									} 
 									if(!matchFound){
 										for (CategoryVO categoryVO :  categories.getItems()) {
-											System.out.println("Extensions - "+categoryVO.getFileExtensions());
 											if(categoryVO.getCategoryName().equals("Others") ){
 												categories.getSelectionModel().select(categoryVO);
 												break;

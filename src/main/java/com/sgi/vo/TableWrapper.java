@@ -59,7 +59,6 @@ public class TableWrapper {
 	}
 	public void searchDownloadsBasedOnCategories(CategoryVO categoryVO){
 		this.getTableData().clear();
-		System.out.println("categoryVO.getParentCategory()"+categoryVO.getParentCategory());
 		if(!categoryVO.getCategoryName().equals("Categories")){
 			this.getTableData().addAll(downloadsDAO.getAllDownloads(categoryVO));
 		}
